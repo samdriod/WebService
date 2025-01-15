@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
+const ListingsDB = require("./modules/listingsDB.js");
+const db = new ListingsDB();
 
 const app = express();
 const PORT = process.PORT || 3080;
