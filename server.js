@@ -13,6 +13,15 @@ app.get("/", (req, res) => {
   res.send({status: "Service Working"});
 });
 
+app.post("/api/listings", async (req,res) => {
+  try {
+  let lst = await db.addNewListing(req.body);
+  res.status(201).json(lst);
+  } catch (err) {
+    res.status(500).json({error: err.message});
+  }
+});
+
 app.use((req, res, next) => {
   res.status(404).send({error: "Not Found"});
   next();
