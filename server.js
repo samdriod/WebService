@@ -49,6 +49,15 @@ app.put("/api/listings/:id", async (req,res) => {
   }
 });
 
+app.delete("/api/listings/:id", async (req,res) => {
+  try {
+    let lst = await db.deleteListingById(req.params.id);
+    res.status(204).json(lst);
+  } catch (err) {
+    res.status(500).json({error: err.message})
+  }
+});
+
 app.use((req, res, next) => {
   res.status(404).send({error: "Not Found"});
   next();
