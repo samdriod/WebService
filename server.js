@@ -1,3 +1,17 @@
+
+/********************************************************************************
+* BTI425 – Assignment 1
+*
+* I declare that this assignment is my own work in accordance with Seneca's
+* Academic Integrity Policy:
+*
+* https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
+*
+* Name: Samip Karki    Student ID: 141867234      Date: 2025/01/15
+*
+* Published URL: https://web-service-tau.vercel.app/
+*
+********************************************************************************/
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
