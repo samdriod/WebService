@@ -6,7 +6,7 @@ module.exports = class ListingsDB {
     // We don't have a `Listing` object until initialize() is complete
     this.Listing = null;
   }
-
+  
   // Pass the connection string to `initialize()`
   initialize(connectionString) {
     return new Promise((resolve, reject) => {
