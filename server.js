@@ -31,6 +31,15 @@ app.get("/api/listings", async (req, res) => {
   }
 });
 
+app.get("/api/listings/:id", async (req,res) => {
+  try {
+    let lsts = await db.getListingById(req.params.id);
+    res.status(200).json(lsts);
+  } catch (err) {
+    res.status(500).json({error: err.message})
+  }
+});
+
 app.use((req, res, next) => {
   res.status(404).send({error: "Not Found"});
   next();
