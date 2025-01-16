@@ -40,6 +40,15 @@ app.get("/api/listings/:id", async (req,res) => {
   }
 });
 
+app.put("/api/listings/:id", async (req,res) => {
+  try {
+    let lst = await db.updateListingById(req.data, req.params.id);
+    res.status(200).json(lst);
+  } catch (err) {
+    res.status(500).json({error: err.message})
+  }
+});
+
 app.use((req, res, next) => {
   res.status(404).send({error: "Not Found"});
   next();
