@@ -56,7 +56,7 @@ app.get("/api/listings/:id", async (req,res) => {
 
 app.put("/api/listings/:id", async (req,res) => {
   try {
-    let lst = await db.updateListingById(req.data, req.params.id);
+    let lst = await db.updateListingById(req.body, req.params.id);
     res.status(200).json(lst);
   } catch (err) {
     res.status(500).json({error: err.message})
